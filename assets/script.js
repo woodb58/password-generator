@@ -14,23 +14,24 @@ var generateBtn = document.querySelector("#generate");
   var charLength = (prompt("Choose length of password between 8-128 characters"))
   
   // password length with prompt to get user to choose correct length
-  while(charLength < 8 || charLength > 128) {
-    alert("choose password between 8-128 characters");
-    var charLength = (prompt("Length of password must be between 8-128 characters"))
-  }
   
+  while (charLength < 8 || charLength > 128 || isNaN(charLength)) {
+    alert("please enter a number between 8-128 characters");
+    return getPassword();
+  }
+ 
   // password character options
   do {var confirmNumber = confirm("Click OK for Numbers");
     var confirmSpecial = confirm("Click OK for Special Characters");
     var confirmLower = confirm("Click OK for Lower Case Letters");
     var confirmUpper = confirm("Click OK for Upper Case Letters");
 
-  // if/while loop to force option selection
+  //while loop to force option selection
     if (confirmNumber === false && confirmSpecial === false && confirmLower === false && confirmUpper === false) {
       alert("One option required")
     }}
     while(confirmNumber === false && confirmSpecial === false && confirmLower === false && confirmUpper === false)
-  
+
     // if conditionals to build array based on user input
   if (confirmNumber) {
     passwordOption = passwordOption.concat(number)
@@ -60,8 +61,8 @@ var generateBtn = document.querySelector("#generate");
 function writePassword(){
 var password = getPassword();
 var passwordText = document.querySelector("#password");
-
-passwordText.value = password;}
+passwordText.value = password;
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
