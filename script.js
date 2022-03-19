@@ -5,13 +5,14 @@ var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n
 var upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
 var passwordOption = []
-var randomPassword = ""
-
+var passwordText = ""
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
   function getPassword() {
-  var charLength = (prompt("Choose length of password between 8-128 characters"))
+
+  var charLength = (prompt("Choose length of password between 8-128 characters"));
+  
   
   // password length with prompt to get user to choose correct length
   
@@ -50,9 +51,9 @@ var generateBtn = document.querySelector("#generate");
   }
       
 //  for loop to generate password from pool of user selected characters
+var randomPassword = ""
       for (var i = 0; i < charLength; i++) {
         randomPassword = randomPassword + passwordOption[Math.floor(Math.random() * passwordOption.length)];
-        console.log(randomPassword)
       }
       return randomPassword;
 }
