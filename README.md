@@ -12,5 +12,6 @@ Application that an employee can use to generate a random password based on crit
 - Next the user is asked if they would like to include upper case letter
 - If the user declines all options they will be presented with an alert informing them one option is required
 - After user has chosen complexity the text field will populate a randomly generated password
-[site link](https://woodb58.github.io/password-generator/)
+## Deployment
+[Check it out here](https://woodb58.github.io/password-generator/)
 ![password generator](./assets/images/Screenshot%202022-03-18%20172742.png)
